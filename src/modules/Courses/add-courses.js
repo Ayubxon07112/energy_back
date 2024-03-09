@@ -6,7 +6,7 @@ const AddCourses = async ({ body }) => {
   let { title, auhtor, ...rest } = body;
 
   let exstingCourse = await Course.findOne({ title });
-  console.log(exstingCourse);
+  
   if (exstingCourse) {
     throw new ForbiddenError("courses alredy exsted");
   }
